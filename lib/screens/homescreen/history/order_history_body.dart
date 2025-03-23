@@ -83,7 +83,6 @@ class OrderHistoryBody extends StatelessWidget {
                     ),
                     SizedBox(height: 7.h),
 
-                    // Payment Method and Status
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
