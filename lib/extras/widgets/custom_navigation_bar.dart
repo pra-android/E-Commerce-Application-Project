@@ -29,9 +29,14 @@ class CustomBottomNavigationBar extends StatelessWidget {
               icon: Icon(Icons.shop_outlined),
               label: "Cart",
             ),
+
             BottomNavigationBarItem(
               icon: FaIcon(FontAwesomeIcons.heart),
               label: "Favourites",
+            ),
+            BottomNavigationBarItem(
+              icon: FaIcon(FontAwesomeIcons.firstOrder),
+              label: "History",
             ),
             BottomNavigationBarItem(
               icon: FaIcon(FontAwesomeIcons.person),

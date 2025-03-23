@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileListTile extends StatelessWidget {
   const ProfileListTile({super.key});
@@ -8,12 +9,17 @@ class ProfileListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 20),
+        SizedBox(height: 20.h),
         buildMenuItem(Icons.person, "User Details"),
+        SizedBox(height: 2.h),
         buildMenuItem(Icons.settings, "Privacy Policy"),
+        SizedBox(height: 2.h),
         buildMenuItem(Icons.lock, "Change Password"),
+        SizedBox(height: 2.h),
         buildMenuItem(Icons.logout, "Logout"),
+        SizedBox(height: 2.h),
         buildMenuItem(Icons.reviews_outlined, "Review about app"),
+        SizedBox(height: 2.h),
         buildMenuItem(Icons.exit_to_app, "Exit from app"),
         if (isAdmin == true)
           buildMenuItem(Icons.admin_panel_settings_outlined, "Admin Access"),
