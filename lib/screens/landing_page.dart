@@ -20,7 +20,7 @@ class LandingPage extends StatelessWidget {
             Center(child: Image.asset(ImageConstant.landingPageImage)),
             SizedBox(height: 15.h),
             CustomTextStyle(
-              text: "Welcome to E-commerce app",
+              text: "Welcome to Phat Mobile app",
               fontSize: 17.sp,
               fontWeight: FontWeight.w500,
             ),
@@ -29,7 +29,7 @@ class LandingPage extends StatelessWidget {
               padding: EdgeInsets.all(9.w),
               child: CustomTextStyle(
                 text:
-                    "📢 Shop the best products at unbeatable prices!.Discover top-quality products with seamless shopping and fast delivery.Don't miss out on limited-time offers and special promotions.",
+                    "📢 Shop the best foods at unbeatable prices!.Discover top-quality foods with seamless shopping and fast delivery.Don't miss out on limited-time offers and special promotions.",
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -39,6 +39,7 @@ class LandingPage extends StatelessWidget {
 
             CustomButton(
               buttonText: "Continue",
+              backgroundColor: Colors.red,
               width: 290.w,
               height: 40.h,
               onPressed: () {

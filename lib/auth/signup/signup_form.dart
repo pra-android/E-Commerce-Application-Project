@@ -49,6 +49,7 @@ class SignUpForm extends StatelessWidget {
           SizedBox(height: 20.h),
           CustomButton(
             buttonText: "Create Account",
+            backgroundColor: Colors.red,
             onPressed: () {},
             height: 40.h,
             width: 300.w,

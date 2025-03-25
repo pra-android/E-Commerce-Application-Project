@@ -54,6 +54,7 @@ class LoginForm extends StatelessWidget {
             width: 300.w,
             height: 45.h,
             buttonText: "LOGIN",
+            backgroundColor: Colors.red,
             onPressed: () {
               Get.to(() => HomeScreen());
             },

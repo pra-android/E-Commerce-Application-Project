@@ -1,3 +1,4 @@
+import 'package:ecommerce_application/screens/homescreen/homepage/home_page_header.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,9 +8,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-
-        children: [Text("Home Page")],
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [HomePageHeader()],
       ),
     );
   }

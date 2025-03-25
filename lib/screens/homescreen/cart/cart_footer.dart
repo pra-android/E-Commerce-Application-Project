@@ -1,5 +1,7 @@
 import 'package:ecommerce_application/extras/widgets/custom_text_style.dart';
+import 'package:ecommerce_application/screens/homescreen/cart/paymentpage/payment_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CartFooter extends StatefulWidget {
   const CartFooter({super.key});
@@ -16,14 +18,8 @@ class _CartFooterState extends State<CartFooter> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
           child: InkWell(
-            onTap: () async {
-              /* Fluttertoast.showToast(
-                gravity: ToastGravity.CENTER,
-                backgroundColor: Colors.black,
-                textColor: Colors.white,
-                msg:
-                    "✅Order have been Confirmed.Now pay according to situation",
-              );*/
+            onTap: () {
+              Get.to(() => PaymentPage());
             },
             child: Container(
               decoration: BoxDecoration(
@@ -31,7 +27,7 @@ class _CartFooterState extends State<CartFooter> {
                 borderRadius: BorderRadius.circular(5.0),
               ),
               height: 50,
-              // Change to your desired color
+
               child: Center(
                 child: CustomTextStyle(
                   text: "Checkout",
