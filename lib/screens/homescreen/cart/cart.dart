@@ -11,27 +11,29 @@ class Cart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          height: 75.h,
-          width: Get.context!.width,
-          decoration: BoxDecoration(color: Colors.blue.shade500),
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.only(top: 28.h),
-              child: CustomTextStyle(
-                text: "Cart Items",
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w500,
-                color: Colors.white,
+    return Scaffold(
+      body: Column(
+        children: [
+          Container(
+            height: 75.h,
+            width: Get.context!.width,
+            decoration: BoxDecoration(color: Colors.blue.shade500),
+            child: Center(
+              child: Padding(
+                padding: EdgeInsets.only(top: 28.h),
+                child: CustomTextStyle(
+                  text: "Cart Items",
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
-        ),
-        Expanded(child: SingleChildScrollView(child: CartBody())),
-        CartFooter(),
-      ],
+          Expanded(child: SingleChildScrollView(child: CartBody())),
+          CartFooter(),
+        ],
+      ),
     );
   }
 }

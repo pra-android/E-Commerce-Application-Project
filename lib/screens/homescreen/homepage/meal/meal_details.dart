@@ -1,16 +1,30 @@
-import 'package:ecommerce_application/extras/widgets/custom_text_style.dart';
 import 'package:ecommerce_application/screens/homescreen/homepage/meal/meal_details_body.dart';
+import 'package:ecommerce_application/screens/homescreen/homepage/meal/meal_details_footer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import '../../../../extras/widgets/custom_flutter_toast.dart';
 
 class MealDetails extends StatelessWidget {
-  const MealDetails({super.key});
+  final String imageUrl;
+  final String? descriptions;
+  final String? title;
+  final String price;
+  final List mealChoices;
+  const MealDetails({
+    super.key,
+    required this.imageUrl,
+    this.title,
+    this.descriptions,
+    required this.price,
+    required this.mealChoices,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -19,15 +33,14 @@ class MealDetails extends StatelessWidget {
               Stack(
                 children: [
                   Container(
-                    height: 400.h,
+                    height: 350.h,
                     width: Get.context!.width,
-                    decoration: BoxDecoration(color: const Color(0xFFFAF3E7)),
-                    child: Center(
-                      child: Image.asset(
-                        "assets/pizza.png",
-                        height: 300.h,
-                        width: 350.w,
-                      ),
+                    decoration: BoxDecoration(color: Colors.white),
+                    child: Image.asset(
+                      imageUrl,
+                      height: 200.h,
+                      width: 250.w,
+                      fit: BoxFit.fill,
                     ),
                   ),
 
@@ -54,30 +67,14 @@ class MealDetails extends StatelessWidget {
 
                     child: FaIcon(FontAwesomeIcons.heart),
                   ),
-                  Positioned(
-                    left: 20.w,
-                    bottom: 30.h,
-
-                    child: CustomTextStyle(
-                      text: "Family Pack",
-                      color: Colors.black,
-                      fontSize: 19.sp,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  Positioned(
-                    left: 20.w,
-                    bottom: 15.h,
-
-                    child: CustomTextStyle(
-                      text: "\$44.90",
-                      color: Colors.black,
-                      fontSize: 14.sp,
-                    ),
-                  ),
                 ],
               ),
-              MealDetailsBody(),
+              MealDetailsBody(
+                title: title,
+                mealChoices: mealChoices,
+                descriptions: descriptions,
+              ),
+              MealDetailsFooter(),
             ],
           ),
         ),
@@ -89,7 +86,11 @@ class MealDetails extends StatelessWidget {
           height: 50.h,
           child: ElevatedButton(
             onPressed: () {
-              // Add to cart logic here
+              CustomFlutterToast.showFlutterToast(
+                "Items Added for Order",
+                Color(0xFFFAF3E7),
+                Colors.black,
+              );
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.red.shade700,

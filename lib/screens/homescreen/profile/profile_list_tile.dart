@@ -10,19 +10,23 @@ class ProfileListTile extends StatelessWidget {
     return Column(
       children: [
         SizedBox(height: 20.h),
+
         buildMenuItem(Icons.person, "User Details"),
+        if (isAdmin == true)
+          buildMenuItem(Icons.admin_panel_settings_outlined, "Admin Access"),
+        buildMenuItem(Icons.notifications, "Notifications"),
+
         SizedBox(height: 2.h),
-        buildMenuItem(Icons.settings, "Privacy Policy"),
+        buildMenuItem(Icons.logout, "Logout"),
+
         SizedBox(height: 2.h),
         buildMenuItem(Icons.lock, "Change Password"),
         SizedBox(height: 2.h),
-        buildMenuItem(Icons.logout, "Logout"),
+        buildMenuItem(Icons.settings, "Privacy Policy"),
         SizedBox(height: 2.h),
         buildMenuItem(Icons.reviews_outlined, "Review about app"),
         SizedBox(height: 2.h),
         buildMenuItem(Icons.exit_to_app, "Exit from app"),
-        if (isAdmin == true)
-          buildMenuItem(Icons.admin_panel_settings_outlined, "Admin Access"),
       ],
     );
   }

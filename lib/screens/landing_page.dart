@@ -1,5 +1,7 @@
 import 'package:ecommerce_application/extras/widgets/custom_button.dart';
 import 'package:ecommerce_application/extras/widgets/custom_text_style.dart';
+import 'package:ecommerce_application/screens/homescreen/home_screen.dart';
+import 'package:ecommerce_application/screens/homescreen/homepage/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -43,7 +45,7 @@ class LandingPage extends StatelessWidget {
               width: 290.w,
               height: 40.h,
               onPressed: () {
-                Get.to(() => LoginPage());
+                Get.to(() => HomeScreen());
               },
             ),
           ],
