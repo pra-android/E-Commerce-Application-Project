@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'screens/landing_page.dart';
+import 'screens/splash_screen.dart';
 
 void main() {
   runApp(ProviderScope(child: const MyApp()));
@@ -21,8 +21,16 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
-          theme: ThemeData(),
-          home: LandingPage(),
+          theme: ThemeData(
+            bottomNavigationBarTheme: BottomNavigationBarThemeData(
+              backgroundColor: Colors.red,
+            ),
+            appBarTheme: AppBarTheme(
+              backgroundColor: Colors.white,
+              iconTheme: IconThemeData(color: Colors.white),
+            ),
+          ),
+          home: SplashScreen(),
         );
       },
     );

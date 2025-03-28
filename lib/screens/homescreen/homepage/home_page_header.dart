@@ -1,15 +1,9 @@
-import 'dart:math';
-import 'package:ecommerce_application/extras/constants/order_constant.dart';
-import 'package:ecommerce_application/extras/widgets/custom_button.dart';
+import 'package:ecommerce_application/extras/constants/image_constant.dart';
 import 'package:ecommerce_application/extras/widgets/custom_text_style.dart';
-import 'package:ecommerce_application/screens/homescreen/homepage/delivery/delivery.dart';
-import 'package:ecommerce_application/screens/homescreen/homepage/meal/meal_list.dart';
-import 'package:ecommerce_application/screens/homescreen/homepage/meal/meal_product.dart';
-import 'package:ecommerce_application/screens/homescreen/homepage/option_delivery_container.dart';
-import 'package:ecommerce_application/screens/homescreen/homepage/pickup/pick_up.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePageHeader extends StatefulWidget {
   const HomePageHeader({super.key});
@@ -24,52 +18,86 @@ class _HomePageHeaderState extends State<HomePageHeader> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 25.h),
         Align(
           alignment: Alignment.centerLeft,
           child: Padding(
-            padding: EdgeInsets.only(top: 16.w, left: 20.w),
-            child: CustomTextStyle(
-              text: "It's a good day",
-              color: Colors.black,
-              fontSize: min(26.sp, 24),
-              fontWeight: FontWeight.w600,
+            padding: EdgeInsets.only(top: 6.h, left: 20.w),
+            child: Text(
+              "Crispy, Juicy, Phat",
+              style: GoogleFonts.aclonica(
+                textStyle: TextStyle(
+                  color: Colors.brown,
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
             ),
           ),
         ),
         Padding(
           padding: EdgeInsets.only(top: 2.h, left: 20.w),
-          child: CustomTextStyle(
-            text: "for Phat Mobile Application",
-            color: Colors.black,
-            fontSize: min(20.sp, 24),
-            fontWeight: FontWeight.w600,
+          child: Text(
+            "Taste the Crunch",
+            style: GoogleFonts.aclonica(
+              textStyle: TextStyle(
+                color: Colors.brown,
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
           ),
         ),
-        SizedBox(height: 12.h),
+
         Padding(
-          padding: EdgeInsets.only(left: 20.w, top: 5.h),
-          child: CustomTextStyle(
-            text: "How would you like your food?",
-            fontWeight: FontWeight.w400,
-            fontSize: 14.sp,
+          padding: EdgeInsets.only(left: 6.w, right: 6.w, top: 8.h),
+          child: Container(
+            height: 200.h,
+            width: Get.context!.width,
+            decoration: BoxDecoration(
+              color: Colors.yellow.shade50,
+              borderRadius: BorderRadius.circular(12.r),
+            ),
+            child: Column(
+              children: [
+                Image.asset(
+                  ImageConstant.homePageImage,
+                  fit: BoxFit.cover,
+                  height: 180.h,
+                  width: 300.w,
+                ),
+                CustomTextStyle(
+                  text: "🍔Get the food quickly and easily🍔",
+                  color: Colors.black,
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w500,
+                ),
+              ],
+            ),
           ),
         ),
-        Image.asset(
-          "assets/paperbag.png",
-          height: 300.h,
-          width: 500.w,
-          fit: BoxFit.cover,
-        ),
-        SizedBox(height: 45.h),
-        Padding(
+
+        SizedBox(height: 15.h),
+        /* Padding(
           padding: EdgeInsets.all(8.w),
           child: CustomButton(
-            buttonText: "ORDER ONLINE",
+            buttonText: "ORDER NOW",
             onPressed: () {
               showModalBottomSheetUI(context);
             },
             backgroundColor: Colors.red.shade700,
+            height: 48.h,
+            width: 350.w,
+          ),
+        ),
+        SizedBox(height: 5.h),
+        Padding(
+          padding: EdgeInsets.all(8.w),
+          child: CustomButton(
+            buttonText: "GET CATERING",
+            onPressed: () {
+              showModalBottomSheetUI(context);
+            },
+            backgroundColor: Colors.blue,
             height: 48.h,
             width: 350.w,
           ),
@@ -194,6 +222,7 @@ class _HomePageHeaderState extends State<HomePageHeader> {
                     child: CustomButton(
                       buttonText: "CONFIRM",
                       onPressed: () {
+                        Navigator.pop(context);
                         if (selectedIndex == 0) {
                           Get.to(() => MealList());
                         } else if (selectedIndex == 1) {
@@ -215,6 +244,8 @@ class _HomePageHeaderState extends State<HomePageHeader> {
           },
         );
       },
+    );*/
+      ],
     );
   }
 }

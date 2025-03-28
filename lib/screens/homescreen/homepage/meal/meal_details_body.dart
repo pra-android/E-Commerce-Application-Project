@@ -41,62 +41,50 @@ class MealDetailsBody extends StatelessWidget {
           ),
         ),
 
-        Padding(
-          padding: EdgeInsets.only(top: 8.w),
-          child: SizedBox(
-            height: 65.h,
-            child: Center(
-              child: ListView.separated(
-                separatorBuilder: (context, index) {
-                  return SizedBox(width: 8.w);
-                },
-
-                itemCount: mealChoices.isEmpty ? 1 : mealChoices.length,
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-
-                physics: ScrollPhysics(),
-                itemBuilder: (context, index) {
-                  if (mealChoices.isNotEmpty) {
-                    return Row(
-                      children: [
-                        Container(
-                          height: 60.h,
-                          width: 140.w,
-                          decoration: BoxDecoration(
-                            color: Colors.grey.shade200,
-                            borderRadius: BorderRadius.circular(8.r),
+        mealChoices.isEmpty
+            ? SizedBox.shrink()
+            : Padding(
+              padding: EdgeInsets.only(top: 8.w),
+              child: SizedBox(
+                height: 65.h,
+                child: Center(
+                  child: ListView.separated(
+                    separatorBuilder: (context, index) => SizedBox(width: 8.w),
+                    itemCount: mealChoices.length,
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    physics: ScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      return Row(
+                        children: [
+                          Container(
+                            height: 60.h,
+                            width: 140.w,
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade200,
+                              borderRadius: BorderRadius.circular(8.r),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                CustomTextStyle(
+                                  text: mealChoices[index]['size'],
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                                CustomTextStyle(
+                                  text: mealChoices[index]['price'],
+                                ),
+                              ],
+                            ),
                           ),
-
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              CustomTextStyle(
-                                text: mealChoices[index]['size'],
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w500,
-                              ),
-                              CustomTextStyle(
-                                text: mealChoices[index]['price'],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    );
-                  }
-                  return Center(
-                    child: CustomTextStyle(
-                      text: descriptions!,
-                      maxLines: 2,
-                      textOverflow: TextOverflow.ellipsis,
-                    ),
-                  );
-                },
+                        ],
+                      );
+                    },
+                  ),
+                ),
               ),
             ),
-          ),
-        ),
 
         Padding(
           padding: EdgeInsets.all(8.w),

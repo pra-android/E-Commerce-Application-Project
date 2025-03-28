@@ -6,7 +6,7 @@ class FoodCategorizedConstant {
           "title": "Chili Cheese Dog",
           "descriptions":
               "Hot dog topped with chili, melted cheese, and onions.",
-          "imageUrl": "assets/chilli_cheese_dog.jpg",
+          "imageUrl": "assets/chilli_cheese_dog-removebg-preview.png",
           "price": "\$10",
           "choices": [],
         },
@@ -30,7 +30,7 @@ class FoodCategorizedConstant {
           "title": "Chicken(cut8's)",
           "descriptions":
               "Hot dog topped with chili, melted cheese, and onions.",
-          "imageUrl": "assets/chicken_cut8.jpg",
+          "imageUrl": "assets/chicken_cut8-removebg-preview.png",
           "price": "\$10",
           "choices": [],
         },

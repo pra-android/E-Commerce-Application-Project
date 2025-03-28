@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CartBody extends StatelessWidget {
-  const CartBody({super.key});
+class CartList extends StatelessWidget {
+  const CartList({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 10,
+      itemCount: 2,
       shrinkWrap: true,
       physics: const ScrollPhysics(),
       itemBuilder: (context, index) {
         return Card(
           elevation: 2,
+          color: Colors.white,
           margin: EdgeInsets.symmetric(vertical: 6.h, horizontal: 10.w),
           child: Container(
             padding: EdgeInsets.all(10.w),
-            height: 120.h,
+            height: 100.h,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),
@@ -24,40 +25,6 @@ class CartBody extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Image Section
-                Container(
-                  height: 100.h,
-                  width: 100.w,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade100,
-                    borderRadius: BorderRadius.circular(10.r),
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10.r),
-                    child: Padding(
-                      padding: EdgeInsets.all(8.w),
-                      child: Image.network(
-                        "https://imgs.search.brave.com/QWE_THXsWb1sJDYRCjq099bjjMO8jq66dBNivH48S18/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvcmlw/ZS1tYW5nby13aXRo/LWxlYWYteGM2ZDdh/cWs0NGUzMjhnNy0y/LnBuZw",
-                        height: 95.h,
-                        width: 95.w,
-
-                        /*errorBuilder: ((context, error, stackTrace) {
-                            return Image.asset(datas[index].assetsImage);
-                          }),*/
-                        loadingBuilder: ((context, child, loadingProgress) {
-                          if (loadingProgress == null) {
-                            return child;
-                          }
-
-                          return const Center(
-                            child: CircularProgressIndicator(),
-                          );
-                        }),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(width: 11.w),
                 // Text Section
                 Expanded(
                   child: Column(
@@ -66,7 +33,7 @@ class CartBody extends StatelessWidget {
                     children: [
                       SizedBox(height: 8.h),
                       Text(
-                        "Mango",
+                        "Tray Chips",
                         overflow: TextOverflow.ellipsis,
                         maxLines: 1,
                         style: TextStyle(
@@ -76,7 +43,7 @@ class CartBody extends StatelessWidget {
                       ),
                       const SizedBox(height: 2),
                       Text(
-                        "Price: Rs:800",
+                        "Price:\$ 296.00",
                         style: TextStyle(
                           fontSize: 13.sp,
                           color: Colors.grey.shade600,
@@ -85,7 +52,7 @@ class CartBody extends StatelessWidget {
                       ),
                       const SizedBox(height: 5),
                       Text(
-                        "Sub Total:8 * 5",
+                        "Sub Total:5 * 296.00",
                         style: TextStyle(
                           fontSize: 13.sp,
                           fontWeight: FontWeight.bold,

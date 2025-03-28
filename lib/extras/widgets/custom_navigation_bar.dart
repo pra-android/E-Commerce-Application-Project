@@ -12,12 +12,12 @@ class CustomBottomNavigationBar extends StatelessWidget {
       builder: (context, ref, child) {
         final countValue = ref.watch(bottomCounterProvider);
         return BottomNavigationBar(
-          backgroundColor: Colors.white,
           currentIndex: countValue,
+
           onTap: (value) {
             ref.read(bottomCounterProvider.notifier).state = value;
           },
-          selectedItemColor: Colors.blue.shade600,
+          selectedItemColor: Colors.red.shade800,
           unselectedItemColor: Colors.black,
           showUnselectedLabels: true,
           items: [
@@ -25,14 +25,18 @@ class CustomBottomNavigationBar extends StatelessWidget {
               icon: Icon(Icons.home_outlined),
               label: "Home",
             ),
-
             BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.heart),
-              label: "Favourites",
+              icon: Icon(Icons.restaurant_outlined),
+              label: "Menu",
             ),
             BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.firstOrder),
-              label: "History",
+              icon: Icon(Icons.catching_pokemon),
+              label: "Catering",
+            ),
+
+            BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_bag_outlined),
+              label: "Cart",
             ),
             BottomNavigationBarItem(
               icon: FaIcon(FontAwesomeIcons.person),

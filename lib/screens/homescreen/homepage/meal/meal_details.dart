@@ -33,14 +33,14 @@ class MealDetails extends StatelessWidget {
               Stack(
                 children: [
                   Container(
-                    height: 350.h,
+                    height: 300.h,
                     width: Get.context!.width,
-                    decoration: BoxDecoration(color: Colors.white),
+                    decoration: BoxDecoration(color: Color(0xFFFAF3E7)),
                     child: Image.asset(
                       imageUrl,
                       height: 200.h,
                       width: 250.w,
-                      fit: BoxFit.fill,
+                      fit: BoxFit.contain,
                     ),
                   ),
 
